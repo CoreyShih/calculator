@@ -62,7 +62,7 @@ keypad.addEventListener("click", (event) => {
             // Only allow one decimal point per number
             if (event.target.id !== "key-decimal" || !hasDecimal) {
                 // Reset display to trim leading zeroes or start new number if previous entry was an operator
-                if (+display.textContent === 0 || prevEntry === "OPERATOR" || prevEntry === "EQUALS") {
+                if (display.textContent === "0" || prevEntry === "OPERATOR" || prevEntry === "EQUALS") {
                     display.textContent = event.target.textContent;
                 } else {
                     display.textContent += event.target.textContent;
